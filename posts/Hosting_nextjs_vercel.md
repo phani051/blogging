@@ -31,7 +31,7 @@ In this article we will see how to host NetxtJS application(in my case blogging 
 * Create a github account if you doesn't have.
 * create a repository with NextJS application.
 
-![Repository Image](/public/github_repo.png)
+![Repository Image](/images/github_repo.png)
 
 ### Create a account on Vercel and import repository.
 
@@ -40,7 +40,7 @@ In this article we will see how to host NetxtJS application(in my case blogging 
 * Proceed with the promps and use NetxtJS as deployment.
 * Once you click deploy, application starts building and you can see the build logs.
 
-![Vercel Build](/public/vercel_build_logs.png)
+![Vercel Build](/images/vercel_build_logs.png)
 
 * Once deployment is completed you can visit site or add domain.
 
@@ -52,11 +52,11 @@ In this article we will see how to host NetxtJS application(in my case blogging 
 * Go to domains page and add your custom domain and click add.
 * Update the Domain nameservers on the domain provider.
 
-![Nameserver Update](/public/nameservers_on_domain.png)
+![Nameserver Update](/images/nameservers_on_domain.png)
 
 * Once the nameservers are updated on domain provider, domain validation on Vercel should be completed like below.
 
-![Domain Update](/public/vercel_domain_update.png)
+![Domain Update](/images/vercel_domain_update.png)
 
 *  Once domain is verified, you can visit your domain name enjoy your NextJS application.
 
