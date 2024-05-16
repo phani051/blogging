@@ -12,3 +12,28 @@ In the last article we have seen how to install RHEL 9 on the old Macbook. But t
 
 ### Internet to Macbook with USB tethering
 
+* To get the required packages of drivers, we need internet to the Macbook.
+* USB tethering is the option we can use to connect mobile internet to RHEL as there is no wifi and Ethernet port.
+* Once internet is connected to Macbook, run below commands in the terminal.
+
+> Run below commands in terminal.
+
+```
+sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+
+sudo rpm -Uvh https://download1.rpmfusion.org/free/el/rpmfusion-free-release-9.noarch.rpm
+
+sudo rpm -Uvh https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-9.noarch.rpm
+
+sudo yum update
+sudo yum install akmod-wl
+akmods
+```
+> Reboot once above commands complete.
+
+Once rebooted, you will be able to see the wifi adapter workng and can see available wifi networks.
+
+#### This concludes fixing wifi drivers issue on RHEL 9 Macbook Air 🎉
+
+
+
