@@ -1,3 +1,9 @@
+---
+title: "NetBackup Diskpool Status"
+subtitle: "Generate NetBackup Diskpool status reports in html formate and send email."
+date: "2024-05-18"
+---
+
 This article is targeted to the audiance who are working on Backup and Recovery using Veritas NetBackup.
 
 ### Requirment
