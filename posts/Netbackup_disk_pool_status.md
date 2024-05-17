@@ -98,8 +98,8 @@ We should be receiving a html file having the Diskpool status from all NetBackup
     > * -d specifies the delimiter
     > * -t for title of the html file
     > * -h for header name.
-    * With above command, html file is created.
-    * Color coding of cells depending on %fullof disk space is one of our requirment, for the we append below JScript to html file created in above step.
+  * With above command, html file is created.
+  * Color coding of cells depending on %fullof disk space is one of our requirment, for the we append below JScript to html file created in above step.
 
   ```
         echo '<script>
