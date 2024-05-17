@@ -13,6 +13,8 @@ Need to monitor Diskpool status in the NetBackup environment which is having a l
 
 We should be receiving a html file having the Diskpool status from all NetBackup primary servers in tabular format with color coded depending on the % of the storage.
 
+__Sample Report__: [NBU DiskPool Status](/attachments/dpstatus.html)
+
 ### Steps involved
 * Gather data of the disk pools and dump locally.
 * Extract the data from dump file to required format, in our case tabular form(for now).
@@ -85,7 +87,7 @@ We should be receiving a html file having the Diskpool status from all NetBackup
     * You can run for loop with the server in a file(Personally I prefer that).
     * With the above step, we have disk volume details of all server in a single local file in a tabular format with "," as delimiter.
     
-* ### Tabulate script
+* ### Tabulate and insert in HTML
     * We have the required data with "," as delimiter on a local file.
     * Our next step would be preparing a template html file where apart of table, rest every thing is static.
     * We can discuss about the tabulate script in other article, but all this script does is insert the table with the data provided from file with a specific delimiter(in our case it's ",").
@@ -102,7 +104,7 @@ We should be receiving a html file having the Diskpool status from all NetBackup
   * Color coding of cells depending on %fullof disk space is one of our requirment, for the we append below JScript to html file created in above step.
 
   ```
-        echo '<script>
+        <script>
       $("td:nth-child(3)").each(function () {
         if (parseInt($(this).text()) >= 85) {
           $(this).addClass("add_red");
@@ -112,9 +114,36 @@ We should be receiving a html file having the Diskpool status from all NetBackup
           $(this).addClass("add_green");
         }
       });
-        </script></html>' >>~/dpstatus.html
+        </script> >>~/dpstatus.html
   ```
     * Which this we will have our final html file which is ready for delivery.
+
+
+* ### Email the HTML report
+
+  * We need to email the html report which is generated in the above step.
+  * Using __mail__ on the server, we can email the report as below.
+
+  ```
+    echo "message" | mail -r "from_email" -s "Subject" -a <html_report> -c <cc receipiant1>,<cc receipiant2>,<cc receipiant3>
+  ```
+  * With above command email is sent to the intended audiance with the html report attached.
+
+* ### Schedule the report
+
+  * All the above tasks are consolidated and placed in a single script.
+  * Schedule to run the script to run on required frequency(in my case every Tuesday and Thursday).
+  * Add entry in crontab to schedule the script to run as required.
+
+  ```
+  # Diskpool status email
+  00 06 * * 2,4 /usr/openv/netbackup/local/scripts/diskpoolstatus.sh
+  ```
+
+
+### By following above steps we can schedule a report of Diskpool Status from multiple NetBackup server in HTML format 🎉
+
+
 
 
 
