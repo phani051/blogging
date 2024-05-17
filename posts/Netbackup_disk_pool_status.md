@@ -90,16 +90,18 @@ We should be receiving a html file having the Diskpool status from all NetBackup
     * Our next step would be preparing a template html file where apart of table, rest every thing is static.
     * We can discuss about the tabulate script in other article, but all this script does is insert the table with the data provided from file with a specific delimiter(in our case it's ",").
     * Below is the syntax to insert data from dump file to HTML.
-    ```
+
+  ```
     cat ~/dpstatus | {cat echo} | tabulatev2.sh -d "," -t "NBU DP Status" -h "Disk Pool Status" >~/dpstatus.html
-    ```
+  ```
     > * "dpstatus" is dump file whihc contains disk volume data from all master servers.
     > * -d specifies the delimiter
     > * -t for title of the html file
     > * -h for header name.
     * With above command, html file is created.
     * Color coding of cells depending on %fullof disk space is one of our requirment, for the we append below JScript to html file created in above step.
-    ```
+
+  ```
         echo '<script>
       $("td:nth-child(3)").each(function () {
         if (parseInt($(this).text()) >= 85) {
@@ -111,7 +113,7 @@ We should be receiving a html file having the Diskpool status from all NetBackup
         }
       });
         </script></html>' >>~/dpstatus.html
-    ```
+  ```
     * Which this we will have our final html file which is ready for delivery.
 
 
