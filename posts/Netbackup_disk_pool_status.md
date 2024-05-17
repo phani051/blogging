@@ -60,12 +60,12 @@ __Sample Report__: [NBU DiskPool Status](/attachments/dpstatus.html)
 
     ```
             Master,           DiskPool,                     %Full,   Total Capacity(TB),  Used Capacity(TB), Available Capacity(TB),   Store Server Type
-             flpd633,         VAp01_fvanbu03med02,          58.27,   188.09,              109.60,              78.50,                  PureDisk
-             flpd633,         ODP1_common_ffpddr25,         0.00,    10.86,                0.00,               10.86,                  DataDomain
-             flpd633,         SDp1_flph865,                 0.00,    21.28,                0.00,               21.28,                  AdvancedDisk
-             flpd633,         SDp1_flph706_brp,             0.16,    12.80,                0.02,               12.78,                  AdvancedDisk
-             flpd633,         DP1_p1cvs1d1_ffpddr25,        0.00,    17.32,                0.00,               17.32,                  DataDomain
-             flpd633,         SDp1_t1cim1d9,                0.00,    19.28,                0.00,               19.28,                  AdvancedDisk
+             sdscade,         VAp01_erjnfdjkfv,          58.27,   188.09,              109.60,              78.50,                  PureDisk
+             sdscade,         ODP1_common_xdxnfdc,         0.00,    10.86,                0.00,               10.86,                  DataDomain
+             sdscade,         SDp1_qwwqws,                 0.00,    21.28,                0.00,               21.28,                  AdvancedDisk
+             sdscade,         SDp1_cdscds_brp,             0.16,    12.80,                0.02,               12.78,                  AdvancedDisk
+             sdscade,         DP1_psdcsdc,        0.00,    17.32,                0.00,               17.32,                  DataDomain
+             sdscade,         SDp1_sdcsdc,                0.00,    19.28,                0.00,               19.28,                  AdvancedDisk
     ```
 
     > Above steps need to be performed on all the remote servers(as a single script) and the final out put should be appended to the local file(on which the scipt in initialized).
