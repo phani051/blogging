@@ -80,6 +80,7 @@ Ansible Setup:
  * Try to ssh managed hosts from master to test, you should be able to login to managed container with out any password prompt.
  * Our lab is ready and we can validate by running ansible.
  * Create inventry.ini file with managed hosts and root as ansible user
+ 
  ```
     192.168.31.11 ansible_user=root
     192.168.31.12 ansible_user=root
