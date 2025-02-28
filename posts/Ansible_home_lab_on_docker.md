@@ -80,4 +80,4 @@ Ansible Setup:
  ````
  * You can validate now by adhoc command "ansible -i inventory.ini -m ping all"
 
- Thats it, now you have your Ansible lab and can experiment and learn  :)
+ #### Thats it, now you have your Ansible lab and can experiment and learn  🎉:)
